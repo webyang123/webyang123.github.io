@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>留言</title>
+        <link rel="stylesheet" href="css/reset.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/layout.css" media="screen" title="no title" charset="utf-8">
+        <script src="js/jquery-1.10.1.min.js" charset="utf-8"></script>
+        <link rel="shotcut icon" type="image/x-icon" href="img/icon.png">
+        <style media="screen"></style>
+    </head>
+    <body>
+        <script src="js/header.js" charset="utf-8"></script>
+        <div class="bannerbar bannerbar6"></div>
+
+        <div class="messagebox">
+            <div class="message">
+                <div class="navtitle">
+                    <span class="name">留言板</span>
+
+                </div>
+                <!-- 留言信息 -->
+                <div class="liuyanlist">
+                    <div class="newslist messagelist clear">
+                        <div class="liuyanren clear">
+                            <img class="touximg" src="img/kehu.png" alt="" />
+                            <span >客户留言：</span>
+                            <span>vivi</span>
+                            <span>2016-06-25 19:58:44</span>
+                        </div>
+                        <p>题目：Such an imsrpesive a</p>
+                        <p>内容：Such an imsrpesive answer! You've beaten us all with that!</p>
+                        <p class="huifu"  >回复：Thank you for your message.</p>
+                    </div>
+                    <div class="newslist messagelist clear">
+                        <div class="liuyanren clear">
+                            <img class="touximg" src="img/guoke.png" alt="" />
+                            <span >过客留言：</span>
+                            <span>vava</span>
+                            <span>2016-04-14 15:13:20</span>
+                        </div>
+                        <p>题目：合同</p>
+                        <p>内容：重大合同的实施情况</p>
+                        <p class="huifu"  >回复：关于公司的重大合同的实施部分，相关部门已经展开工作，公司的同学们会根据协议的相关要求，密切配合相关单位做好实施工作的，感谢您的关注。</p>
+                    </div>
+                    <div class="newslist messagelist clear">
+                        <div class="liuyanren clear">
+                            <img class="touximg" src="img/touzi.png" alt="" />
+                            <span >投资者留言：</span>
+                            <span>veve</span>
+                            <span>2016-04-14 14:41:47</span>
+                        </div>
+                            <p>题目：在E都市地图APP上的意见反馈怎么没有相关人员关注受</p>
+                            <p>内容：在E都市地图APP上的意见反馈怎么没有相关人员关注受理？如果用户不关心贵公司的产品会提建议吗？希望引起重视</p>
+                            <p class="huifu"  >回复：您好，感谢您的建议，我们对此很重视。接到您的建议之后官网的相关工作人员已经把意见转交相关负责人，关于您的建议和意见会尽快处理，再次表示感谢。</p>
+                    </div>
+
+
+
+                </div>
+                <div class="newmore">
+                    <button type="button" name="button">查看更多</button>
+
+                </div>
+                <div class="xiemes">
+                    <p class="xiemesp">签写留言:</p>
+                    <div class="radioline ">
+                        <span>
+                            <input class="guoke" type="radio" name="name" value="过客留言" checked="true">
+                            <img src="img/guoke.png" alt="" />
+                            <label for="">过客留言</label>
+                        </span>
+                        <span>
+                            <input class="kehu" type="radio" name="name" value="客户留言">
+                            <img src="img/kehu.png" alt="" />
+                            <label for="">客户留言</label>
+                        </span>
+                        <span>
+                            <input class="touzi" type="radio" name="name" value="投资者留言">
+                            <img src="img/touzi.png" alt="" />
+                            <label for="">投资者留言</label>
+                        </span>
+
+
+                    </div>
+                    <div class="inputline">
+                        <label for="">发言人:</label>
+                        <div class="shuru">
+                            <input class="fayan" type="text" name="name" value="" placeholder="请输入发言人姓名" >
+                        </div>
+
+                    </div>
+                    <div class="inputline">
+                        <label for="">题目:</label>
+                        <div class="shuru">
+                            <input class="timu" type="text" name="name" value=""placeholder="请输入标题">
+                        </div>
+
+                    </div>
+                    <div class="inputline">
+                        <label for="">联系电话:</label>
+                        <div class="shuru">
+                            <input class="tel" type="text" name="name" value="" placeholder="请输入联系电话">
+                        </div>
+
+                    </div>
+                    <div class="inputline clear">
+                        <label class="lable1 fl" for="">具体内容:</label>
+                        <div class="shuru fl">
+                            <textarea class="liuyan" name="name" rows="6" cols="40"></textarea>
+                        </div>
+                    </div>
+                    <div class="subre">
+                        <button class="tijiao" type="button" name="button">提交</button>
+                        <button class="rewrite" type="button" name="button">重写</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/footer.js" charset="utf-8"></script>
+    </body>
+    <script src="js/gonggaoAll.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $(".tijiao").on ("click",function(){
+        if ($(".guoke")[0].checked==true) {
+            var fyleixing=$(".guoke").val();
+            var imgname="guoke.png";
+        }
+        if ($(".kehu")[0].checked==true) {
+            var fyleixing=$(".kehu").val();
+            var imgname="kehu.png";
+        }
+        if ($(".touzi")[0].checked==true) {
+            var fyleixing=$(".touzi").val();
+            var imgname="touzi.png";
+
+        }
+        var fynames=$(".fayan").val();
+        var fytitle=$(".timu").val();
+        var fytel=$(".tel").val();
+        var liuyan=$(".liuyan").val();
+
+        $.ajax({
+            type:"GET",
+            url:"http://localhost/aladdin/php/changeDB.php",
+            data:{
+                action:"add",
+                imgname:imgname,
+                fyleixing:fyleixing,
+                fynames: fynames,
+                fytitle:fytitle,
+                fytel:fytel,
+                liuyan:liuyan,
+            },
+            dataType:"json",
+            success:function(obj){
+                if (obj.err==0) {
+                    alert("留言成功");
+                    $(".guoke")[0].checked=true;
+                    $(".fayan").val("");
+                    $(".timu").val("");
+                    $(".tel").val("");
+                    $(".liuyan").val("");
+                }
+            }
+        })
+        refresh(5);
+    })
+    $(".rewrite").on("click",function(){
+        $(".guoke")[0].checked=true;
+        $(".fayan").val("");
+        $(".timu").val("");
+        $(".tel").val("");
+        $(".liuyan").val("");
+    })
+
+    refresh(5);
+    $(".newmore button").on("click",function(){
+       refresh(0);
+        $(".newmore button").html("已经没有更多了")
+
+    })
+
+
+
+    </script>
+
+</html>

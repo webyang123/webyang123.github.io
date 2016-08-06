@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <style media="screen">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html,body {
+                height: 100%;
+                overflow: hidden;
+            }
+            canvas {
+                box-shadow: 0 0 50px red;
+                /*margin: 50px;*/
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <canvas id="canvas"></canvas>
+
+    </body>
+    <script src="common.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+
+        canvas.width = document.body.offsetWidth;
+        canvas.height = document.body.offsetHeight;
+        var canvasWidth = canvas.clientWidth;
+        var canvasHeight = canvas.clientHeight;
+        //构建函数
+        function Ball(x,y,r,speedX,speedY,color) {
+            this.r = r || random(10,30);
+            this.x = x || random(this.r,canvasWidth - this.r);
+            this.y = y || random(this.r,canvasHeight - this.r);
+            this.speedX = speedX || random(-3,3,0);
+            this.speedY = speedY || random(-3,3,0);
+
+            this.color = color || randomColor();
+            this.draw = function () {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+                ctx.closePath();
+                ctx.fill();
+            }
+            this.move = function () {
+                // ctx.clearRect(0,0,canvasWidth,canvasHeight);
+                if (this.x < this.r || this.x > canvasWidth - this.r) {
+                    this.speedX = -this.speedX;
+                }
+                if (this.y < this.r || this.y > canvasHeight - this.r) {
+                    this.speedY = -this.speedY;
+                }
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.draw();
+            }
+        }
+        var balls = [];
+        for (var i = 0; i < 150; i++) {
+            var ball = new Ball();
+            ball.draw();
+            balls.push(ball);
+        }
+        // setInterval(function () {
+        //     ctx.clearRect(0,0,canvasWidth,canvasHeight);
+        //     for (var i = 0; i < balls.length; i++) {
+        //         balls[i].move();
+        //     }
+        // },16)
+
+        // function gameloop() {
+        //     ctx.clearRect(0,0,canvasWidth,canvasHeight);
+        //     for (var i = 0; i < balls.length; i++) {
+        //         balls[i].move();
+        //     }
+        //     setTimeout(gameloop,16)
+        // }
+        // gameloop();
+
+        function gameloop() {
+            ctx.clearRect(0,0,canvasWidth,canvasHeight);
+            for (var i = 0; i < balls.length; i++) {
+                balls[i].move();
+            }
+            window.requestAnimationFrame(gameloop);
+        }
+        window.requestAnimationFrame(gameloop)
+    </script>
+</html>

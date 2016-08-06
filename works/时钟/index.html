@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html,body {
+                height: 100%;
+            }
+            .clock {
+                width: 300px;
+                height: 300px;
+                border: 20px solid hotpink;
+                background:-webkit-radial-gradient(center, cyan, pink);
+                border-radius: 100%;
+                position: relative;
+            }
+            .numbers>div {
+                width: 300px;
+                height: 40px;
+                font-size: 28px;
+                line-height: 40px;
+                position: absolute;
+                top:50%;
+                margin-top: -20px;
+                left: 0;
+            }
+            .numbers span {
+                position: absolute;
+            }
+            .hour {
+                width: 6px;
+                height: 110px;
+                background-color: red;
+                position: absolute;
+                left: 50%;
+                margin-left: -3px;
+                top:50%;
+                margin-top: -110px;
+                transform-origin: 50% 100%;
+                transform: rotate(105deg);
+            }
+            .minute {
+                width: 4px;
+                height: 120px;
+                background-color: green;
+                position: absolute;
+                left: 50%;
+                top:50%;
+                margin-left: -2px;
+                margin-top: -120px;
+                transform-origin: 50% 100%;
+                transform: rotate(180deg);
+            }
+            .second {
+                width: 2px;
+                height: 130px;
+                background-color: blue;
+                position: absolute;
+                left: 50%;
+                top:50%;
+                margin-left: -1px;
+                margin-top: -130px;
+                transform-origin: 50% 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clock">
+            <div class="numbers">
+                <div><span>9</span></div>
+                <div><span>10</span></div>
+                <div><span>11</span></div>
+                <div><span>12</span></div>
+                <div><span>1</span></div>
+                <div><span>2</span></div>
+                <div><span>3</span></div>
+                <div><span>4</span></div>
+                <div><span>5</span></div>
+                <div><span>6</span></div>
+                <div><span>7</span></div>
+                <div><span>8</span></div>
+            </div>
+            <div class="hour">
+            </div>
+            <div class="minute">
+            </div>
+            <div class="second">
+            </div>
+        </div>
+
+    </body>
+    <script type="text/javascript">
+        var nums = document.querySelectorAll('.numbers>div');
+        var spans = document.querySelectorAll('span');
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var timer = null;
+        for (var i = 0; i < nums.length; i++) {
+            nums[i].style.transform = 'rotate('+ i*30 + 'deg)';
+            spans[i].style.transform = 'rotate('+ i*330 + 'deg)';
+        }
+        if (timer) {
+            clearInterval(timer);
+        }
+        timer = setInterval(function () {
+            var oDate = new Date();
+            var h = oDate.getHours();
+            var min = oDate.getMinutes();
+            var s = oDate.getSeconds();
+            // console.log(h,min,s);
+            if (h>=12) {
+                h -= 12;
+            }
+            var degh = h/12*360+min/60*30;
+            var degm = min/60*360+s/60*6;
+
+            hour.style.transform = 'rotate('+ degh +'deg)';
+            minute.style.transform = 'rotate('+ degm +'deg)';
+            second.style.transform = 'rotate('+ s*6 +'deg)'
+
+
+        },1000)
+    </script>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>蘑菇街大图滚动</title>
+        <script src="tween.js" charset="utf-8"></script>
+        <style media="screen">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 710px;
+                margin: 100px auto;
+                height: 530px;
+                position: relative;
+                /*border: 5px solid hotpink;*/
+                overflow: hidden;
+            }
+            .wrapper {
+                height: 530px;
+                position: absolute;
+                left: 0px;
+            }
+            .wrapper img {
+                float: left;
+                width: 710px;
+                height: 530px;
+            }
+            .btns {
+                position: absolute;
+                top: 92%;
+                left: 50%;
+                margin-left: -75px;
+                width: 150px;
+                text-align: center;
+                padding: 6.5px 0;
+                border-radius: 15px;
+                background-color: white;
+            }
+            .btns span {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-color: #ccc;
+                border-radius: 50%;
+                position: relative;
+            }
+            .btns .active {
+                background-color: rgb(213, 59, 96);
+
+            }
+            em {
+                width: 2px;
+                height: 8px;
+                background-color: white;
+                position: absolute;
+                margin-left: -1px;
+                left: 50%;
+                transform-origin: 50% 100%;
+                display: none;
+            }
+            .active em {
+                display: block;
+            }
+            .direction span {
+                position: absolute;
+                top: 50%;
+                margin-top: -22px;
+                width: 30px;
+                font-size: 1.5em;
+                line-height: 2em;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.2);
+                color: white;
+                display: none;
+                cursor: pointer;
+            }
+            .prev {
+                left: 0px;
+            }
+            .next {
+                right: 0px;
+            }
+            .prev:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrapper">
+                <img src="img/1.jpg" alt="">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+                <img src="img/6.jpg" alt="">
+
+            </div>
+            <div class="btns">
+                <span class="active"><em></em></span>
+                <span><em></em></span>
+                <span><em></em></span>
+                <span><em></em></span>
+                <span><em></em></span>
+                <span><em></em></span>
+            </div>
+            <div class="direction">
+                <span class="prev"><</span>
+                <span class="next">></span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var container = document.querySelector('.container');
+            var wrapper = document.querySelector('.wrapper');
+            var imgs = document.querySelectorAll('.wrapper img');
+            console.log(container);
+            var btns = document.querySelectorAll('.btns span');
+            var prev = document.querySelector('.prev');
+            var next = document.querySelector('.next');
+            var directions = document.querySelectorAll('.direction');
+            var em = document.querySelectorAll('em');
+
+            var w = imgs[0].offsetWidth;
+
+            var index = 0;
+            var timer = null;
+            var animateTimer = '';
+            var emTimer = '';
+            var speed = 0;
+            var count = 0;
+
+
+            wrapper.style.width = w * imgs.length +'px';
+
+
+
+            // 定义一个过渡的动画
+            var transition = function () {
+                var start = wrapper.offsetLeft;
+                var end = -index * w;
+                var change = end - start;
+                var t = 0;
+                var t0 = 50;
+                if (animateTimer) {
+                    clearInterval(animateTimer);
+                }
+                animateTimer = setInterval(function() {
+
+                    // console.log(start,end,change);
+                    t+=2;
+                    if (t == t0) {
+                        clearInterval(animateTimer);
+                    }
+                    //wrapper.style.left = start + change/t0*t +'px';
+                    wrapper.style.left = Tween.Cubic.easeOut(t,start,change,t0)+'px';
+                },16)
+            }
+
+
+            // 自动切换,封装在auto中
+            var auto = function () {
+                if (timer) {
+                    clearInterval(timer);
+                }
+                transition();
+                timer = setInterval(function () {
+                    // console.log('1111');
+                    index++;
+                    if(index == imgs.length) {
+                        index = 0;
+                    }
+                    add(index);
+                    transition();
+                },5000)
+            }
+            auto();
+            // 给em设置动画
+            var emTransition = function (index) {
+                if (emTimer) {
+                    clearInterval(emTimer);
+                }
+                emTimer = setInterval(function(){
+                    em[index].style.transform ='rotate(0deg)';
+                    count++;
+                    if(count >80) {
+                        speed++;
+                        // console.log(speed);
+                        if (speed == 180) {
+                            speed = 0;
+                            clearInterval(emTimer);
+                        }
+                        em[index].style.transform ='rotate('+2*speed+'deg)';
+                        // for(var i = 0; i < em.length; i++) {
+                        //
+                        // }
+                    }
+                    // console.log(count);
+                },16)
+                count = 0;
+
+            }
+            // 初始状态让第一个转
+              emTransition(0);
+
+
+            // 给下方的按钮添加class和旋转
+            var add = function (a) {
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].className = '';
+                    em[i].style.display = 'none';
+                    em[index] = i;
+                    index = this.index;
+                }
+                btns[index].className = 'active';
+                em[index].style.display = 'block';
+                emTransition(index);
+            }
+
+            // 鼠标移动到图片上，箭头显示
+            container.onmouseover = function() {
+                prev.style.display = 'block';
+                next.style.display = 'block';
+                clearInterval(timer);
+            }
+            // 鼠标拿出。箭头隐藏
+            container.onmouseout = function () {
+                prev.style.display = 'none';
+                next.style.display = 'none';
+                if (count == 260) {
+                    index++;
+                    if(index == imgs.length) {
+                        index = 0;
+                    }
+                    add(index);
+                    transition();
+
+                }
+                 auto();
+
+            }
+            // 上一步点击事件
+            prev.onclick = function () {
+                clearInterval(timer);
+                speed = 0;
+                index--;
+                if (index == -1) {
+                    index = imgs.length-1;
+                }
+                add(index);
+                // transition();
+                auto();
+                //wrapper.style.left = -w*index +'px';
+            }
+            // 下一步点击事件
+            next.onclick = function () {
+                clearInterval(timer);
+                speed = 0;
+                index++;
+                if (index == imgs.length) {
+                    index = 0;
+                }
+                add(index);
+                transition();
+                auto();
+                //wrapper.style.left = - w*index + 'px';
+            }
+            // 按钮 切换
+            for (var i = 0; i< btns.length ; i++) {
+                btns[i].index = i;
+                btns[i].onclick = function () {
+                    clearInterval(timer);
+                    speed = 0;
+                    index = this.index;
+                    // em[index].style.transform ='rotate(0deg)';
+                    add(index);
+                    transition();
+                    auto();
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>

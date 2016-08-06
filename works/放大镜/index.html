@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <style media="screen">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .min-wrap {
+                border: 1px solid red;
+                position: relative;
+                width: 300px;
+                left: 20px;
+                top: 20px;
+            }
+            .min-wrap img {
+                width: 100%;
+            }
+            #slider {
+                width: 100px;
+                height: 100px;
+                background-image: url("dian.png");
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+            .max-wrap {
+                border: 1px solid black;
+                width: 400px;
+                height: 400px;
+                overflow: hidden;
+                position: absolute;
+                left: 350px;
+                top: 20px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="min-wrap">
+            <img src="min.jpg" alt="" />
+            <div id="slider"></div>
+        </div>
+        <div class="max-wrap">
+            <img src="max.jpg" alt="" />
+        </div>
+
+    </body>
+    <script src="jquery-2.2.3.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var minWrap = $('.min-wrap');
+        var maxWrap = $('.max-wrap');
+        var slider = $('#slider');
+        var maxImg = $('.max-wrap img');
+        //绑定事件
+        minWrap.on('mousemove',function (e) {
+            slider.show();
+            maxWrap.show();
+            //鼠标移入的点位置
+            var x = e.clientX - minWrap.offset().left - slider.width()/2;
+            var y = e.clientY - minWrap.offset().top - slider.height()/2;
+            //临界值判断
+            if (x<0) {
+                x=0;
+            } else if (x>minWrap.width()-slider.width()) {
+                x=minWrap.width()-slider.width();
+            }
+            if (y<0) {
+                y=0;
+            } else if (y>minWrap.height()-slider.height()) {
+                y=minWrap.height()-slider.height();
+            }
+            //移动slider
+            slider.css({
+                left:x+'px',
+                top:y+'px'
+            });
+            //修改大图的移动
+            var scale = {
+                x: x / (minWrap.width()-slider.width()),
+                y: y / (minWrap.height()-slider.height())
+            };
+            // console.log(scale.x,scale.y);
+            var maxleft = (maxImg.width()-maxWrap.width()) * scale.x;
+            var maxtop = (maxImg.height()-maxWrap.height()) * scale.y;
+
+            // console.log(left,top);
+            maxWrap.scrollLeft(maxleft);
+            maxWrap.scrollTop(maxtop);
+
+        });
+        minWrap.on('mouseout',function () {
+            slider.hide();
+            maxWrap.hide();
+        });
+
+
+
+
+
+
+
+    </script>
+</html>

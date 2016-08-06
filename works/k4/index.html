@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>东风起亚</title>
+        <link rel="stylesheet" href="css/layout.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/reset.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/reset1.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/swiper-3.3.1.min.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+
+        <div id="container">
+            <div class="onload" style="display:block">
+                <img class="clock"src="imgs/loading_clock.png" alt="">
+                <img class="point"src="imgs/loading_pointer.png" alt="" />
+                <p id="percent">0%</p>
+            </div>
+            <div class="page" id="page1"style="display:none" >
+                <header>
+                    <a id="syfx"href="javascript:void(0)">
+                        <img src="imgs/首页分享.png" alt="" />
+                    </a>
+                </header>
+                <nav>
+                    <ul>
+                        <li class="additive active" >
+                            <a href="javascript:void(0)">首页</a>
+                        </li>
+                        <li class="additive state">
+                            <a href="javascript:void(0)">活动说明</a>
+                        </li>
+                        <li class="additive shipin">
+                            <a href="#video_1">精彩视频</a>
+                        </li>
+                        <li class="additive">
+                            <a href="http://m.dyk.com.cn/">访问官网</a>
+                        </li>
+                        <li class=" additive award">
+                            <a href="javascript:void(0)">中奖名单</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main">
+                        <img id="luck"src="imgs/运气.png" alt="" />
+                    </a>
+                </div>
+                <footer>
+                    <img id="video_btn"src="imgs/page1_btn_video_active.png" alt="" />
+                    <img id="show_btn" src="imgs/page1_btn_pic.png" alt="" />
+                    <div class="video">
+                        <video src="K4.mp4" id="video_1" loop poster="imgs/视频.png" >
+                        </video>
+                        <img id="video_start"src="imgs/点击播放.png" alt="" />
+                    </div>
+                        <div class="swiper-container" style="display:none">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="imgs/liangdian1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="imgs/liangdian2.png" alt=""></div>
+                                <div class="swiper-slide"><img src="imgs/liangdian3.png" alt=""></div>
+                                <div class="swiper-slide"><img src="imgs/liangdian4.png" alt=""></div>
+                                <div class="swiper-slide"><img src="imgs/liangdian5.png" alt=""></div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                    </div>
+                </footer>
+            </div>
+            <div class="page" id="page2" style="display:none">
+                <img src="imgs/commen_close.png" alt="" />
+                <div class="inner">
+                    <form class="menu" action="index.html" method="post">
+                        <div class="item" id="name">
+                            <label for="name"class="list">*姓名：</label>
+                            <input id="name1"type="text" name="name" value="">
+                        </div>
+                        <div class="item" id="mobile">
+                            <label for="mobile"class="list">*手机号：</label>
+                            <input id="mobile1"type="text" name="name" value="">
+                        </div>
+                        <div class="item" id="location">
+                            <label for="province"class="list">*所在省份：</label>
+                            <select class="province" name="province">
+                                <option value="">请选择</option>
+                            </select>
+                            <span>省</span>
+                            <select class="city" name="city">
+                                <option value="">请选择</option>
+                            </select>
+                            <span>市</span>
+                        </div>
+                        <div class="item" id="dealer">
+                            <label for="dealer"class="list">*选择经销商：</label>
+                            <select class="dealer1" name="dealers">
+                                <option class="tab"value="">请选择</option>
+                            </select>
+                        </div>
+                        <div class="item" id="model">
+                            <label for="model"class="list">*选择车型：</label>
+                            <select class="model1" name="model">
+                                <option value="">请选择</option>
+                                <option value="">全新K5</option>
+                                <option value="">K4</option>
+                                <option value="">新K3</option>
+                                <option value="">K3S</option>
+                            </select>
+                        </div>
+                        <div class="item" id="time">
+                            <label class="list">*预计购车时间：</label>
+                            <select class="time1" name="time">
+                                <option value="">请选择</option>
+                                <option value="">未来半月</option>
+                                <option value="">未来一月</option>
+                                <option value="">未来三月</option>
+                                <option value="">未来半年</option>
+                                <option value="">未来一年</option>
+                            </select>
+                        </div>
+                        <input id="tijiao"type="button" name="name" value="">
+                    </form>
+                </div>
+
+            </div>
+            <div class="page" id="page3" style="display:none">
+                <div class="inner">
+                    <img id="referral"src="imgs/page2_btn_intro.png" alt="">
+                    <img id="start1"src="imgs/page2_btn_start.png" alt="" />
+                </div>
+            </div>
+            <div class="page" id="page4" style="display:none">
+                <div class="inner">
+                    <div id="start2"></div>
+                    <div id="red_bg"></div>
+                    <ul>
+                        <li class="choice active1"id="xuan1">
+                            <img src="imgs/选项1.png" alt=""/>
+                        </li>
+                        <li class="choice"id="xuan2" >
+                            <img src="imgs/选项2.png" alt=""/>
+                        </li>
+                        <li class="choice" id="xuan3">
+                            <img src="imgs/选项3.png" alt="" />
+                        </li>
+                        <li class="choice" id="xuan4">
+                            <img src="imgs/选项4.png" alt="" />
+                        </li>
+                    </ul>
+                    <ol>
+                        <li class="details" style="display:block">
+                            <img class="map  transLeft" id="map1"src="imgs/发动机.png" alt="">
+                            <img class="line  transRight" id="line1"src="imgs/3046_1453779101.png" alt="">
+                            <img class="expl  transRight" id="expl1"src="imgs/2062_1453779100.png" alt="">
+                            <img class="spot dealyShow" id="spot1"src="imgs/2407_1453779106.png" alt="" />
+                            <img class="part dealyShow" id="part1"src="imgs/1536_1453779105.png" alt="" />
+                        </li>
+                        <li class="details" style="display:none">
+                            <img class="map  transLeft" id="map2"src="imgs/安全气囊.png" alt="">
+                            <img class="line  transRight" id="line2"src="imgs/6253_1453779102.png" alt="">
+                            <img class="expl  transRight"id="expl2"src="imgs/2740_1453779102.png" alt="">
+                            <img class="spot dealyShow" id="spot2"src="imgs/2407_1453779106.png" alt="" />
+                            <img class="part dealyShow" id="part2"src="imgs/1536_1453779105.png" alt="" />
+                        </li>
+                        <li class="details" style="display:none">
+                            <img class="map  transLeft" id="map3"src="imgs/加速器.png" alt="">
+                            <img class="line  transRight" id="line3"src="imgs/2115_1453779103.png" alt="">
+                            <img class="expl  transRight"id="expl3"src="imgs/2062_1453779100.png" alt="">
+                            <img class="spot dealyShow" id="spot3"src="imgs/2407_1453779106.png" alt="" />
+                            <img class="part dealyShow" id="part3"src="imgs/1536_1453779105.png" alt="" />
+                        </li>
+                        <li class="details" style="display:none">
+                            <img class="map  transLeft" id="map4"src="imgs/上坡.png" alt="">
+                            <img class="line  transRight" id="line4"src="imgs/5844_1453779104.png" alt="">
+                            <img class="expl  transRight"id="expl4"src="imgs/9228_1453779104.png" alt="">
+                            <img class="spot dealyShow" id="spot4"src="imgs/2407_1453779106.png" alt="" />
+                            <img class="part dealyShow" id="part4"src="imgs/1536_1453779105.png" alt="" />
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="page" id="page5" style="display:none">
+                <div class="inner">
+                    <canvas id="canvas">
+                    </canvas>
+                    <img id="tip"src="imgs/page4_tip.png" alt="" />
+                    <img id="tip_red"src="imgs/371_1453779101.png" alt="" />
+                </div>
+            </div>
+            <div class="page" id="page6" style="display:none">
+                <div class="inner">
+                    <form class="" action="index.html" method="post">
+                        <select class="choujiang" name="">
+                            <option value="0">1~6</option>
+                            <option value="6">7~12</option>
+                            <option value="12">13~18</option>
+                            <option value="18">19~24</option>
+                            <option value="24">25~30</option>
+                            <option value="30">31~36</option>
+                        </select>
+                    </form>
+                    <div class="zhuanpan">
+                        <div class="point1">
+                        </div>
+                    </div>
+                    <button id='xiazhu'></button>
+                </div>
+            </div>
+
+            <!-- 弹窗 -->
+            <div class="layer" id="layer1" style="display:none">
+                <div class="inner" id="inner1">
+                    <a href="javascript:void(0)"><img src="imgs/commen_close.png" alt="" /></a>
+                    <h1 id="title">活动说明</h1>
+                    <div id="wrapper">
+                        <div id="scroller">
+                            <p>自12月19号起至1月2号，参与“长安马自达《老炮</br>
+                                儿》飙车赢好礼“活动，就有机会获得2015年12月</br>
+                                至2016年2月之间的时光网免费电子兑换票！</br>
+                                与长安马自达一起飙车！观影！过大年！  快来参加吧！</br>
+                                奖项设置：</br>
+                                获胜用户可获得由长安马自达提供的的时光网免费电</br>
+                                子兑换票2张。</br>
+
+                                特别声明：</br>
+                                参与者一旦参加本次活动，即视为同意并接受以下内</br>
+                                容：</br>
+                                1、参与者应保证其参加本次活动时提交的个人信息</br>
+                                真实、准确、有效，如因提交的手机信息有误导致奖</br>
+                                品无法发放，将视为自动放弃，时光网不另行安排补</br>
+                                发奖品；</br>
+                                2、手机号码为确认中奖和发奖的唯一凭证，请正确</br>
+                                填写并保证手机号码畅通，如因填写错误或手机不畅</br>
+                                通造成的发奖不成功，将视为放弃中奖资格，并不予</br>
+                                重新更正发放；</br>
+                                3、本活动奖品之寄送地址仅限中国大陆地区；</br>
+                                4、本活动奖品不得转换、转让或折换现金；</br>
+                                5、活动期间，严禁通过使用第三方软件、编写代码</br>
+                                、黑客攻击、非正常操作流程、非正确手机号或资料信</br>
+                                息等手段和方式以获取抽奖机会的行为，一经发现，</br>
+                                将取消已获得的抽奖资格及已获奖奖项；</br>
+                                 6、如遇不可抗力因素，Mtime时光网有权终止活动</br>
+                                ，有权以相同价值产品替代已公布奖项；</br>
+                                 7、时光电子兑换券的适用城市、影院及观影类型，</br>
+                                请咨询：4006118118或者详询电子兑换使用说明</br>
+                                （“电子兑换使用说明“+链接：
+                                http://group.m </br> time.com/help/discussion/3555651/）；</br>
+                                8、本次活动最终解释权归Mtime时光网所有。</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layer" id="layer2" style="display:none">
+                <div class="inner">
+                        <a href="javascript:void(0)"><img src="imgs/commen_close.png" alt="" /></a>
+                        <ul>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                            <li>隋** 133*******12 获得电影票两张</li>
+                        </ul>
+                </div>
+            </div>
+            <div class="layer" id="layer3" style="display:none">
+                <div class="inner">
+                    <div id="close1">
+                    </div>
+                </div>
+            </div>
+            <div class="layer" id="layer4" style="display:none">
+                <div class="inner">
+                    <div id="close2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/jquery-2.2.3.min.js" charset="utf-8"></script>
+    <script src="swiper-3.3.1.min.js" charset="utf-8"></script>
+    <script src="js/data.js" charset="utf-8"></script>
+    <script src="js/animation.js" charset="utf-8"></script>
+    <script src="js/iscroll.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //移动端屏幕适配
+        (function () {
+            var resizeEvent = 'orientationchange'in window ? 'orientationchange':'resize';
+            var rescale = function () {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth/640 * 40 +'px';
+            }
+            window.addEventListener(resizeEvent,rescale,false);
+            document.addEventListener('DOMContentLoaded',rescale,false);
+        })();
+    </script>
+</html>

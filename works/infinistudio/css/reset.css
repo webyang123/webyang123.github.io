@@ -1,0 +1,16 @@
+body,header,main,i,section,ul,li,div,p,footer,img,figure,h1 {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none
+}
+a {
+    text-decoration: none;
+}
+html,body {
+    width: 100%;
+}
+body {
+    background: #f2f2f2;
+}

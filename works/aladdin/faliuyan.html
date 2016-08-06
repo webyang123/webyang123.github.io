@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <link rel="stylesheet" href="css/layout.css" media="screen" title="no title" charset="utf-8">
+    <style media="screen"></style>
+    <body>
+        <div class="messagebox">
+            <div class="liuyanlist">
+
+            </div>
+        </div>
+
+
+
+    </body>
+    <script src="js/jquery-2.2.3.min.js" charset="utf-8"></script>
+    <script src="js/gonggaoAll.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $.ajax({
+        type:"GET",
+        url:"http://localhost/aladdin/php/changeDB.php",
+        data:{
+            action:"liuyanqueryAll1",
+            
+        },
+        dataType:"json",
+        success:function(obj){
+                 $(".liuyanlist").empty();
+                for(var item in obj) {
+                    //获取对象
+                    var line = obj[item];
+                    var newDiv = $('<div class="newslist messagelist clear">'+
+                    '<div class="liuyanren clear">'+
+                    '<img class="touximg" src="img/'+line.imgname+'" alt="" />'+
+                    '<span >'+line.leixing+'：</span>'+
+                    '<span>'+line.names+'</span>'+
+                    '<span>'+line.timess+'</span>'+
+                    '</div>'+
+                    '<p>题目：'+line.titless+'</p>'+
+                    '<p>内容：'+line.contents+'!</p>'+
+                    '<p class="huifu" idindex='+line.id+' >回复：'+line.huifu+'</p>'+
+                    '</div>');
+                    $(".liuyanlist").append(newDiv);
+
+                }
+                $(".huifu").on("click",function(){
+                    $(".huifu").attr({
+                         contenteditable:"true"
+                    })
+                    $(".huifu").blur(function(){
+                        var str=$(this).html();
+                        str=str.substring(3);
+                        var idindex=$(this).attr('idindex');
+                        $.ajax({
+                            type:"GET",
+                            url:"http://localhost/aladdin/php/changeDB.php",
+                            data:{
+                                action:"update",
+                                huifu:str,
+                                idindex:idindex,
+                            },
+                            dataType:"json",
+
+
+                        })
+
+                    })
+
+                });
+
+        }
+    })
+
+    </script>
+</html>
