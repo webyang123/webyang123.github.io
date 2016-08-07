@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <style media="screen">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            canvas {
+                box-shadow: 0 0 50px red;
+                margin: 50px;
+            }
+            div {
+                width: 20px;
+                height: 20px;
+                background-color: black;
+                border-radius: 50%;
+            }
+            .qiu1 {
+                position: absolute;
+                left: 40px;
+                top: 40px;
+            }
+            .qiu2 {
+                position: absolute;
+                left: 540px;
+                top: 540px;
+            }
+            #zhi {
+                position: absolute;
+                left: 200px;
+                top:580px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <div class="qiu1">
+        </div>
+        <div class="qiu2">
+        </div>
+        <p id="zhi">cubic-bezier(0, 1, 1, 0)</p>
+    </body>
+    <script src="common.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var qiu1 = document.querySelector(".qiu1");
+        var qiu2 = document.querySelector(".qiu2");
+        var zhi = document.getElementById("zhi");
+        // console.log(qiu1,qiu2);
+        var ctx = canvas.getContext('2d');
+        var canvasWidth = canvas.width;
+        var canvasHeight = canvas.height;
+
+        function drawline() {
+            for (var i = 1; i <= 100; i++) {
+                ctx.beginPath();
+                if (i%10==0) {
+                    ctx.moveTo(0,i*50);
+                    ctx.lineTo(15,i*50);
+                } else {
+                    ctx.moveTo(0,i*5);
+                    ctx.lineTo(10,i*5);
+                }
+                ctx.moveTo(0,i*5);
+                ctx.lineTo(10,i*5);
+                ctx.closePath();
+                ctx.stroke();
+            }
+        }
+        drawline();
+
+        //纵向
+        // for (var i = 0; i < 100; i++) {
+        //     ctx.beginPath();
+        //     ctx.moveTo(0,i*5);
+        //     ctx.lineTo(10,i*5);
+        //     ctx.closePath();
+        //     ctx.stroke();
+        // }
+        // for (var i = 1; i < 10; i++) {
+        //     ctx.beginPath();
+        //     ctx.moveTo(10,i*50);
+        //     ctx.lineTo(15,i*50);
+        //     ctx.closePath();
+        //     ctx.stroke();
+        // }
+        //横向
+        for (var i = 0; i < 100; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i*5,500);
+            ctx.lineTo(i*5,490);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        for (var i = 1; i < 10; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i*50,490);
+            ctx.lineTo(i*50,485);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        ctx.save();
+
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,500)
+        ctx.moveTo(500,500);
+        ctx.lineTo(500,0);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0,500);
+        ctx.bezierCurveTo(0,0,500,500,500,0)
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+
+        qiu1.onmousedown = function (e) {
+            var ev = e || window.event;
+            document.onmousemove = function (e) {
+                var ev = e || window.event;
+                // ctx.beginPath();
+                // ctx.moveTo(0,500);
+                // ctx.lineTo(ev.clientX-50,ev.clientY-50);
+                // ctx.stroke();
+                // console.log(ev.clientX);
+                var left1 = ev.clientX - 10;
+                var top1 = ev.clientY -10;
+                if (left1 <= 40 ) {
+                    left1 = 40;
+                }
+                qiu1.style.left = left1 +'px';
+                qiu1.style.top = top1 +'px';
+                var x1 = ev.clientX - canvas.offsetLeft;
+                var y1 = ev.clientX - canvas.offsetTop;
+                // ctx.clearRect(0,0,500,500);
+                ctx.beginPath();
+                ctx.moveTo(0,500);
+                ctx.bezierCurveTo(x1,y1,x2,y2,500,0)
+                // ctx.closePath();
+                ctx.stroke();
+                zhi.innerHTML = "cubic-bezier("+x1/500+", "+y1/500+", "+x2/500+", "+y2/500+")";
+            }
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+        }
+
+        qiu2.onmousedown = function (e) {
+            var ev = e || window.event;
+            document.onmousemove = function (e) {
+                var ev = e || window.event;
+                // ctx.beginPath();
+                // ctx.moveTo(500,0);
+                // ctx.lineTo(ev.clientX-550,ev.clientY-550);
+                // ctx.stroke();
+                // console.log(ev.clientX);
+                var left2 = ev.clientX - 10;
+                var top2 = ev.clientY -10;
+                if (left2 >= 540 ) {
+                    left2 = 540;
+                }
+                qiu2.style.left = left2 +'px';
+                qiu2.style.top = top2 +'px';
+                var x2 = ev.clientX - canvas.offsetLeft;
+                var y2 = ev.clientX - canvas.offsetTop;
+
+                // ctx.clearRect(0,0,500,500);
+                ctx.beginPath();
+                ctx.moveTo(0,500);
+                ctx.bezierCurveTo(x1,y1,x2,y2,500,0)
+                // ctx.closePath();
+                ctx.stroke();
+                zhi.innerHTML = "cubic-bezier("+x1/500+", "+y1/500+", "+x2/500+", "+y2/500+")";
+            }
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+        }
+
+
+    </script>
+</html>

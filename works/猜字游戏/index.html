@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+	*{margin: 0;padding: 0;}
+	html,body{height: 100%;}
+	.fl{float: left;}
+	.fr{float: right;}
+	.clearfix:after{content: '';display: block;clear:both;}
+	.wrap{position: relative;width: 500px;height: 98%;border: 5px solid #cef;margin:0 auto;}
+	.countdown,.score{width: 50%;padding: 10px 0 30px;text-align: left;text-indent: 1em;font-size: 30px;}
+	.txt{font-size: 60px;line-height: 180px;text-align: center;}
+	.tip{text-align: center;font-size: 32px;margin-top: 60px;}
+	.btns{width: 510px;height: 100px;position: absolute;left: 0;bottom: 30px;line-height: 100px;margin-left: -10px;}
+	ul.btns li{float: left;width:92px;list-style: none;text-align: center;font-size: 42px;background: #ccc;border-radius: 5px;margin-left: 10px;cursor: pointer;}
+	figure {text-align:center; margin-top: 50px;}
+	figure button {color: hotpink; background-color: #ccc;font-size: 20px;line-height: 30px; border-radius: 5px;padding: 0 5px;}
+	</style>
+
+</head>
+<body>
+<!-- 剩余时间countdown、得分score -->
+<!-- 随机一个颜色值（中文）font、随机一个字体颜色color赋值给font -->
+<!-- 提示性文本 -->
+<!-- 中文字体及颜色 -->
+<div class="wrap">
+	<div class="header clearfix">
+		<div class="countdown fl">倒计时：30</div>
+		<div class="score fr">得分：0</div>
+	</div>
+	<div class="main">
+		<p class="txt">黄</p>
+		<p class="tip">根据字体的颜色选出与其颜色对应的中文描述</p>
+	</div>
+	<figure><button>点击开始游戏</button></figure>
+
+	<ul class="btns">
+		<li>红</li>
+		<li>黄</li>
+		<li>蓝</li>
+		<li>绿</li>
+		<li>黑</li>
+	</ul>
+</div>
+</body>
+<script type="text/javascript">
+//1.随机文本和颜色赋值给main中的text
+//2.打乱文本顺序，并且取不重复的随机颜色，赋值给btns
+//3.匹配 如果正确 重复1 2
+//4.得分
+//5. 倒计时
+
+//1.随机文本和颜色赋值给main中的text
+var oTxt = document.querySelector('.main .txt');
+var btns = document.querySelectorAll('.btns li');
+var oCountdown = document.querySelector('.countdown');
+var oScore = document.querySelector('.score');
+var open = document.querySelector('figure');
+// console.log(oCountdown,oScore);
+// console.log(btns);
+
+
+// console.log(oTxt);
+// 定义需要的文本和颜色
+var txts = ['红','黄','蓝','绿','黑'];
+var colors = ['red','yellow','blue','green','black'];
+var countdown = 30;
+var score = 0;
+var timer = '';
+var clickable = true;
+
+// console.log(txts,colors);
+var randomColornum;
+// 定义一个随机生成的题目，给它进行封装
+var showTxt = function () {
+	// 随机生成的文本7
+	var randomTxtnum = parseInt(Math.random()*5);
+	var txt = txts[randomTxtnum];
+	oTxt.innerHTML = txt;
+	//随机生成颜色
+	 randomColornum = parseInt(Math.random()*5);
+	var color = colors[randomColornum];
+	oTxt.style.color = color;
+}
+showTxt();
+
+//定义一个function，可以生成五个不重复的随机变量下标。
+var randomSub = function () {
+	var arr = [];
+	while (arr.length < 5) {
+		var flag = false;
+		var r = parseInt(Math.random()*5);
+		// console.log(r);
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] == r) {
+				flag = true;
+				break;
+			}
+		}
+		if (flag == false) {
+			arr.push(r);
+		}
+		// console.log(arr);
+	}
+	return arr;
+	// console.log(arr);(写在这里不执行)
+}
+randomSub();
+
+
+// 给每个按钮生成随机的字和随机的颜色
+var showBtn = function () {
+	var randomTxtsub = randomSub();
+	var randomColorsub = randomSub();
+	for (var i = 0; i < 5; i++) {
+		btns[i].innerHTML = txts[randomTxtsub[i]];
+		btns[i].style.color = colors[randomColorsub[i]];
+		btns[i].sub = randomTxtsub[i];
+	}
+}
+
+showBtn();
+
+//按钮的点击事件
+for (var i = 0; i < btns.length; i++) {
+	btns[i].onclick = function() {
+
+		if(!clickable) {
+			return;
+		}
+		if (randomColornum == this.sub) {
+			score++;
+			oScore.innerHTML = '得分：'+score;
+			showTxt();
+			showBtn();
+		}else {
+			alert('please Try again!')
+		}
+	}
+}
+// 开始计时
+// var flag1 == false;
+// if (flag1) {
+//
+// 	}
+
+open.onclick = function () {
+	timerOpen();
+}
+// 倒计时
+var timerOpen = function(){
+	if (timer) {
+		clearInterval(timer);
+		// countdown = 30;
+		// score = 0;
+	}
+
+	timer = setInterval(function(){
+		countdown--;
+		oCountdown.innerHTML = '倒计时：'+countdown;
+		if(countdown == 0) {
+			clearInterval(timer);
+			clickable = false;
+			gameover();
+		}
+	},1000)
+}
+
+
+// 游戏结束
+var gameover = function () {
+	if(score < 5) {
+		alert('你的智商真令人捉急');
+	}else if(score < 10) {
+		alert ('还有上升的空间，加油哦！');
+	}else {
+		alert('小样，不错哦！');
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

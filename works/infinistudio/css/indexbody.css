@@ -1,0 +1,296 @@
+li {
+    float: left;
+    margin-top: 20px;
+    box-shadow: 0 0 2px rgb(150, 150, 150);
+    overflow: hidden;
+}
+main {
+    overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: 50px;
+}
+main ul li img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    float: left;
+}
+.secword1 {
+    width: 100%;
+    position: relative;
+}
+.secword1 p {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    background: #2b2a2a;
+    opacity: 0.7;
+    margin-top: -1.8em;
+    padding: 0.4em 0;
+    color: white;
+    font-size: 1em;
+}
+.i {
+    text-align: center;
+    font-size: 3px;
+    margin-top: 15px;
+}
+i {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.secword2 {
+    border-top: 1px solid rgba(173, 173, 173,0.2);
+    border-bottom: 1px solid rgba(173, 173, 173,0.2);
+    padding: 15px 0;
+    margin-top: 15px;
+    font-size: 14.4px;
+    color: rgb(102, 102, 102);
+    font-family: STKaiti, 微软雅黑;
+    text-indent: 2em;
+    line-height: 1.5em;
+}
+.secpic {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.secpic img {
+    display: inline-block;
+    margin-top: 3px;
+    width: 39px;
+    height: 27px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.bigpic {
+    width: 100%;
+}
+@media screen and (min-width:860px) {
+    main {
+        width: 75%;
+        margin: 0 auto;
+    }
+    main ul li {
+        width: 30%;
+        background: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 1em;
+        border-radius: 5px;
+    }
+    .pic {
+        overflow: hidden;
+        position: relative;
+    }
+    .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(160, 221, 84,0);
+        top: 0;
+        font-size: 2em;
+        color: rgba(255, 255, 255,0);
+    }
+    main ul li:hover .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 15, 15,0.8);
+        top: 0;
+        color: white;
+        font-size: 2em;
+        border-radius: 5px 5px 0 0;
+        transition: 0.3s;
+    }
+    .word {
+        padding: 8px 0;
+        color: rgb(129, 131, 133);
+    }
+    main ul li:hover .word {
+        color: black;
+        transition: 0.2s;
+    }
+    main ul li:nth-child(3n-1) {
+        margin: 0 5%;
+        margin-top: 20px;
+    }
+    .pic p:nth-child(1) {
+        margin-top: 20%;
+    }
+    .pic p:nth-child(2) {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width:860px) {
+    main {
+        width: 640px;
+        margin: 0 auto;
+    }
+    main ul li {
+        width: 190px;
+        background: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 0.9em;
+        border-radius: 5px;
+    }
+    .pic {
+        overflow: hidden;
+        position: relative;
+    }
+    .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(160, 221, 84,0);
+        top: 0;
+        font-size: 1.8em;
+        color: rgba(255, 255, 255,0);
+    }
+    main ul li:hover .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+         background: rgba(15, 15, 15,0.8);
+        top: 0;
+        color: white;
+        font-size: 1.8em;
+        border-radius: 5px 5px 0 0;
+        transition: 0.2s;
+    }
+    .word {
+        padding: 8px 0;
+        color: rgb(129, 131, 133);
+    }
+    main ul li:hover .word {
+        color: black;
+        transition: 0.2s;
+    }
+    main ul li:nth-child(3n-1) {
+        margin: 0 30px;
+        margin-top: 20px;
+    }
+    .pic p:nth-child(1) {
+        margin-top: 20%;
+    }
+    .pic p:nth-child(2) {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width:645px) {
+    main {
+        width: 95%;
+        margin: 0 auto;
+    }
+    main ul li {
+        width: 30%;
+        background: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 1em;
+        border-radius: 5px;
+    }
+    .pic {
+        overflow: hidden;
+        position: relative;
+    }
+    .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(160, 221, 84,0);
+        top: 0;
+        font-size: 1em;
+        color: rgba(255, 255, 255,0);
+    }
+    main ul li:hover .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+         background: rgba(15, 15, 15,0.8);
+        top: 0;
+        color: white;
+        font-size: 1.4em;
+        border-radius: 5px 5px 0 0;
+        transition: 0.2s;
+    }
+    .word {
+        padding: 8px 0;
+        color: rgb(129, 131, 133);
+    }
+    main ul li:hover .word {
+        color: black;
+        transition: 0.2s;
+    }
+    main ul li:nth-child(3n-1) {
+        margin: 0 5%;
+        margin-top: 20px;
+    }
+    .pic p:nth-child(1) {
+        margin-top: 15%;
+    }
+    .pic p:nth-child(2) {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width:480px) {
+    main {
+        width: 97%;
+        margin: 0 auto;
+    }
+    main ul li {
+        width: 47%;
+        background: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 1em;
+        border-radius: 5px;
+    }
+    main ul li:nth-child(3n-1) {
+        margin: 0;
+        margin-top: 20px;
+    }
+    main ul li:nth-child(odd) {
+        margin-right: 4%;
+        margin-top: 20px;
+    }
+    .pic {
+        overflow: hidden;
+        position: relative;
+    }
+    .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(160, 221, 84,0);
+        top: 0;
+        font-size: 2em;
+        color: rgba(255, 255, 255,0);
+    }
+    main ul li:hover .yinying {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+         background: rgba(15, 15, 15,0.8);
+        top: 0;
+        color: white;
+        font-size: 1.5em;
+        border-radius: 5px 5px 0 0;
+        transition: 0.2s;
+    }
+    .word {
+        padding: 8px 0;
+        color: rgb(129, 131, 133);
+    }
+    main ul li:hover .word {
+        color: black;
+        transition: 0.2s;
+    }
+    .pic p:nth-child(1) {
+        margin-top: 20%;
+    }
+    .pic p:nth-child(2) {
+        font-size: 15px;
+    }
+
+}

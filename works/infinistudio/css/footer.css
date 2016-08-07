@@ -1,0 +1,33 @@
+footer {
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+    background: #e0e0e0;
+    padding: 10px 0;
+}
+footer figure {
+    float: left;
+}
+footer figure:nth-child(1) {
+    width: 47%;
+    text-align: right;
+    padding-right: 15px;
+}
+footer figure:nth-child(1) img {
+    margin-right: 10px;
+    width: 30px;
+    height: 25px;
+}
+footer figure:nth-child(2) {
+    font-size: 12px;
+    line-height: 1.3em;
+    color: rgb(102, 102, 102);
+    width: 45%;
+    padding-left: 15px;
+    border-left: 1px solid rgba(106, 111, 110,0.6);
+}
+footer figure:nth-child(2) img {
+    width: 143px;
+    height: 55px;
+    margin-bottom: 5px;
+}

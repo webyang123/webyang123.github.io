@@ -1,0 +1,547 @@
+html,body {
+    height: 38.45rem;
+}
+#container {
+    width: 16rem;
+    /*height: 38.45rem;*/
+    position: relative;
+    overflow: scroll;
+}
+#container .onload {
+    width: 16rem;
+    height: 38.45rem;
+    background-image: url("../imgs/loading_bg.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#container .onload .clock{
+    width: 6rem;
+    height: 5.25rem;
+    position: absolute;
+    left:5rem;
+    top:8rem;
+}
+#container .onload .point {
+    height: 3rem;
+    position: absolute;
+    left:8rem;
+    top:8rem;
+    transform-origin: bottom center;
+    transform: rotateZ(-150deg);
+}
+#percent {
+    color: white;
+    font-size: 1.3rem;
+    position: absolute;
+    left:7rem;
+    top:13rem;
+}
+#container #page1 {
+    width: 16rem;
+    height: 38.45rem;
+    position: absolute;
+}
+#container #page1 header{
+    width: 16rem;
+    height: 6.8rem;
+    position: absolute;
+    top:0;
+    background-image: url("../imgs/page1_head.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#container #page1 header a img {
+    width: 1.7rem;
+    height: 2.1rem;
+    position: absolute;
+    left: 13.45rem;
+}
+#page1 nav {
+    width: 16rem;
+    height: 1.5rem;
+    background-color: rgb(166, 36, 44);
+    position: absolute;
+    top: 6.8rem;
+ }
+#page1 nav ul {
+    overflow: hidden;
+ }
+#page1 nav ul li {
+    width: 3.1rem;
+    height: 1.5rem;
+    float: left;
+    font-size: 0.6rem;
+    line-height: 1.5rem;
+    text-align: center;
+ }
+#page1 nav ul li a {
+    color: rgb(185, 109, 109);
+ }
+.active {
+    background-image: url("../imgs/nav_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#page1 nav ul .active a {
+    color: white;
+}
+#page1 .main {
+    width: 16rem;
+    height: 19.1rem;
+    background-image: url("../imgs/main_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 8.3rem;
+}
+#page1 .main #luck {
+    position: absolute;
+    top: 8rem;
+    left: 8.15rem;
+}
+#page1 .main #luck {
+    width: 7.25rem;
+    height: 1.75rem;
+}
+#layer1,#layer2 {
+    width: 16rem;
+    height: 25rem;
+    background-color:rgba(26, 26, 26,0.9);
+    position: absolute;
+    top:0;
+}
+#layer1 .inner, #layer2 .inner,#page2 .inner {
+    width: 15rem;
+    height: 24rem;
+    border: 1px solid red;
+    position: absolute;
+    top:0.5rem;
+    left:0.5rem;
+    overflow: scroll;
+    /*overflow: hidden;*/
+}
+#layer1 .inner a,#layer2 .inner a{
+    position: absolute;
+    left: 12rem;
+    top: -0.5rem;
+}
+#layer1 .inner a img,#layer2 .inner a img {
+    width: 2rem;
+    height: 2.8rem;
+}
+#layer1 #wrapper {
+    width: 15rem;
+    height: 20.1rem;
+    overflow: hidden;
+    position: relative;
+}
+#layer1 #scroller {
+    width: 15rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#layer1 #scroller p {
+    color: white;
+    font-size: 0.6rem;
+}
+#layer1  #title {
+    width: 15rem;
+    height: 3.5rem;
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 4rem;
+}
+#layer2 ul{
+    position: absolute;
+    top:3rem;
+    left:1.8rem;
+}
+#layer2 ul li {
+    font-size: 0.7rem;
+    color: white;
+    line-height: 2rem;
+}
+#page1 footer {
+    width: 16rem;
+    height: 11.1rem;
+    background-image: url("../imgs/foot_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:27.39rem;
+    text-align: center;
+}
+#page1 footer>img {
+    width: 7.25rem;
+}
+#page1 footer .swiper-container{
+    width: 14.5rem;
+    height: 7rem;
+    position: absolute;
+    left:0.75rem;
+    top:1.4rem;
+}
+#page1 footer .swiper-slide>img {
+    width: 14.5rem;
+    height: 7rem;
+}
+#page1 footer .video {
+    width: 14.5rem;
+    height: 7rem;
+    position: absolute;
+    left:0.75rem;
+    top:1.4rem;
+}
+#page1 footer #video_1{
+    width: 14.5rem;
+    height: 7rem;
+}
+#video_start {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top:2.5rem;
+    left: 45%;
+}
+#page2 {
+    width: 16rem;
+    height: 38.45rem;
+    background-color:rgba(26, 26, 26,0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#page2>img {
+    width: 2rem;
+    height: 2.8rem;
+    position: absolute;
+    left: 12.5rem;
+    top: 0rem;
+    z-index: 10;
+}
+#page2 .inner .menu {
+    width: 14.8rem;
+    height: 15rem;
+    position: absolute;
+    top:5rem;
+}
+#page2 .inner .menu .item .list {
+    display: inline-block;
+    width: 5.1rem;
+    height: 1.5rem;
+    color: white;
+    font-size: 0.6rem;
+    text-align: right;
+}
+#page2 .inner .menu .item input,#dealer .dealer1,#model .model1,#time .time1{
+    width: 9.2rem;
+    height: 1.5rem;
+    background-color: white;
+    font-size: 0.6rem;
+}
+#page2 .inner .menu option {
+    background-color: white;
+}
+#page2 .inner .menu #tijiao {
+    background-image: url("../imgs/layer_info_submit.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 7.1rem;
+    height: 1.6rem;
+    position: absolute;
+    left: 4.45rem;
+    top: 13rem;
+}
+#page2 .inner .menu #location select {
+    background-image: url("../imgs/layer_info_select.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0.6rem;
+    width: 6em;
+    height: 1.5rem;
+}
+#page2 .inner .menu .item span {
+    color: white;
+    font-size: 0.6rem;
+}
+#page3 {
+    width: 16rem;
+    height: 100%;
+    background-image: url("../imgs/start.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#page3 .inner>img{
+    width: 50%;
+    height: 8.6%;
+}
+#page3 .inner #referral {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#page3 .inner #start1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+#page4{
+    width: 16rem;
+    height: 100%;
+    background-image: url("../imgs/startK4.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#page4 .inner ul {
+    width: 16rem;
+    position: absolute;
+    top:82%;
+    overflow: hidden;
+}
+#page4 .inner ul li {
+    width: 2.2rem;
+    height: 2.2rem;
+    float: left;
+    margin-left: 1.4rem;
+}
+#page4 .inner ol {
+    width: 16rem;
+    height:51%;
+    position: absolute;
+    top:28%;
+}
+#page4 .inner ol li {
+    width: 16rem;
+    height:100%;
+    position: absolute;
+    top:0
+}
+#page4 .inner ol li .map {
+    width: 6.225rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#page4 .inner ol li .line {
+    width: 11.9rem;
+    position: absolute;
+    left: 4.1rem;
+    top: 11.6%;
+}
+#page4 .inner ol li #line3 {
+    width: 13rem;
+    left: 3rem;
+}
+#page4 .inner ol li .expl {
+    width: 8.4rem;
+    position: absolute;
+    top:5%;
+    left: 6.4rem;
+}
+#page4 .inner ol li #expl2 {
+    width: 6rem;
+}
+#page4 .inner ol li #expl3 {
+    left: 7rem;
+}
+#page4 .inner ol li .spot {
+    width: 1.5rem;
+    position: absolute;
+}
+#page4 .inner ol li #spot1 {
+    top:6%;
+    left: 5.5rem;
+}
+#page4 .inner ol li #spot2 {
+    top:6%;
+    left: 5.5rem;
+}
+#page4 .inner ol li #spot3 {
+    top:6.3%;
+    left: 5.2rem;
+}
+#page4 .inner ol li #spot4 {
+    top:6.3%;
+    left: 5.7rem;
+}
+#page4 .inner ol li .part {
+    width: 0.7rem;
+    position: absolute;
+}
+#page4 .inner ol li #part1 {
+    top:73.4%;
+    left: 4.1rem;
+}
+#page4 .inner ol li #part2 {
+    top:70%;
+    left: 6.5rem;
+}
+#page4 .inner ol li #part3 {
+    top:77%;
+    left: 8rem;
+}
+#page4 .inner ol li #part4 {
+    top:92%;
+    left: 6.7rem;
+}
+.transLeft {
+    -webkit-animation: transLeft 2s ease-in-out;
+}
+.transRight {
+    -webkit-animation: transRight 2s ease-in-out;
+}
+.dealyShow {
+    -webkit-animation: dealyShow 2s linear 0s;
+}
+@-webkit-keyframes transLeft {
+    0% {
+        opacity:0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity:1;
+        transform: none;
+    }
+}
+@-webkit-keyframes transRight {
+    0% {
+        opacity:0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity:1;
+        transform: none;
+    }
+}
+@-webkit-keyframes dealyShow {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.active1 {
+    background: url('../imgs/page3_choosed_bg.png') no-repeat;
+    background-size: 100% 100%;
+}
+#page4 .inner ul li>img{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+#page4 #start2 {
+    width: 16rem;
+    height: 2.4rem;
+    position: absolute;
+    bottom: 0;
+}
+#page4 #red_bg {
+    width: 7.9rem;
+    height: 7.9rem;
+    background-color: rgb(81, 18, 19);;
+    border-radius: 100%;
+    position: absolute;
+    left: -3.95rem;
+    top: 28%;
+}
+#page5 {
+    width: 16rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#canvas {
+    width: 16rem;
+    height: 100%;
+}
+#page5 #tip {
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    left: 8rem;
+    top: 25%;
+}
+#page5 #tip_red {
+    width:3rem;
+    height: 3rem;
+    position: absolute;
+    top: 32%;
+    left: 8.6rem;
+    display: none;
+}
+#page6{
+    width: 16rem;
+    height: 100%;
+    background-image: url("../imgs/抽奖背景.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+}
+#page6 .inner {
+    width: 16rem;
+    height: 100%;
+}
+#page6 .inner .choujiang {
+    width: 10rem;
+    height: 5.2%;
+    background: url("../imgs/抽奖下拉背景.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 35%;
+    left: 3rem;
+    font-size: 0.7rem;
+}
+#page6 .inner .zhuanpan {
+    width: 8rem;
+    height: 8rem;
+    background: url("../imgs/转盘.png")0 0 no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 45%;
+    left: 4rem;
+    position: relative;
+}
+#page6 .inner .zhuanpan .point1 {
+    width: 0.9rem;
+    height: 8rem;
+    background:  url('../imgs/point.png') bottom no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 45%;
+    top: 0;
+    transform:  rotate(-6deg);
+}
+#page6 #xiazhu {
+    width: 7.1rem;
+    height: 6.5%;
+    background: url('../imgs/下注.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 85%;
+    left:4.45rem;
+    border: 0;
+}
+#layer3 {
+    width: 16rem;
+    height: 100%;
+    background: url('../imgs/layer_prize.png') no-repeat;
+    background-size: 100% 100%;
+}
+#layer3 #close1,#layer4 #close2  {
+    width: 2.1rem;
+    height: 2.2rem;
+    position: absolute;
+    left: 11.9rem;
+    top: 4.05rem;
+}
+#layer4 {
+    width: 16rem;
+    height: 100%;
+    background: url('../imgs/layer_prize_none.png')no-repeat;
+    background-size: 100% 100%;
+}
