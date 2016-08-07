@@ -1,0 +1,669 @@
+html,body {
+    width: 640px;
+    height: 100%;
+    overflow: hidden;
+}
+div {
+    display: inline-block;
+}
+.container {
+    width: 640px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+#btn_music {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 1.5%;
+    left:550px;
+    background-image: url("../imgs/one_music.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 100;
+}
+.page {
+    width: 640px;
+    height: 100%;
+    position: relative;
+}
+.load {
+    background: url("../imgs/page_loading_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+}
+.load #load_car {
+    width: 159px;
+    height: 5.5%;
+    background: url("../imgs/page_loading_car.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 640px;
+    top: 52.8%;
+    -webkit-animation: car 1.5s ease-in 0s;
+    -moz-animation: car 1.5s ease-in 0s;
+    -ms-animation: car 1.5s ease-in 0s;
+    -o-animation: car 1.5s ease-in 0s;
+    animation: car 1.5s ease-in 0s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes car {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-900px);
+    }
+}
+.load .load_progress {
+    width: 640px;
+    height: 4%;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    top:60%;
+}
+.home {
+    background: url("../imgs/page_home_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+}
+.home .identify {
+    width: 590px;
+    height: 14%;
+    background: url("../imgs/page_home_identify.png") left top no-repeat;
+    position: absolute;
+    left: 26px;
+    top:8%;
+}
+.home .true {
+    width: 386px;
+    height: 19%;
+    background: url("../imgs/page_home_true.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 130px;
+    top: 22%;
+    opacity: 0;
+    -webkit-animation: true 0.5s linear 1.5s;
+    -moz-animation: true 0.5s linear 1.5s;
+    -ms-animation: true 0.5s linear 1.5s;
+    -o-animation: true 0.5s linear 1.5s;
+    animation: true 0.5s linear 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes true {
+    0% {
+        opacity: 0;
+        transform: rotateZ(-120deg) scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateZ(0deg) scale(1);
+    }
+}
+.home #home_car {
+    width: 382px;
+    height: 13.6%;
+    background: url("../imgs/page_home_car.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:57%;
+    left: 50%;
+    margin-left: -191px;
+}
+.home .intro {
+    width: 406px;
+    height: 6.9%;
+    background: url("../imgs/page_home_intro.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:45%;
+    left:50%;
+    margin-left: -203px;
+    opacity: 0;
+    -webkit-animation: opac 0.5s linear 2.5s;
+    -moz-animation: opac 0.5s linear 2.5s;
+    -ms-animation: opac 0.5s linear 2.5s;
+    -o-animation: opac 0.5s linear 2.5s;
+    animation: opac 0.5s linear 2.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.home #start_btn {
+    width: 320px;
+    height: 9%;
+    background: url("../imgs/page_home_btn.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 79%;
+    left:50%;
+    margin-left: -160px;
+    opacity: 0;
+    -webkit-animation: opac 0.5s linear 3s;
+    -moz-animation: opac 0.5s linear 3s;
+    -ms-animation: opac 0.5s linear 3s;
+    -o-animation: opac 0.5s linear 3s;
+    animation: opac 0.5s linear 3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes opac {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.level {
+    background: url("../imgs/page_car_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    position: relative;
+}
+.level .level_picture {
+    width: 576px;
+    height: 35%;
+    background-image: url("../imgs/page_level1_icon.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    margin-left: -288px;
+}
+.level .answer_holder {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:58%;
+    left:50%;
+}
+.level .answer_holder .word{
+    width: 120px;
+    height: 120px;
+    font-weight:900;
+    font-size: 80px;
+    line-height: 120px;
+}
+.level .answer_holder1 {
+    width: 310px;
+    height: 129px;
+    margin-left: -155px;
+    background-image: url("../imgs/page_cai_collection2.png");
+}
+.level .answer_holder1 .word:nth-child(1) {
+    position: absolute;
+    left:0px;
+}
+.level .answer_holder1 .word:nth-child(2) {
+    position: absolute;
+    right:0px;
+}
+.level .answer_holder2 {
+    width: 470px;
+    height: 129px;
+    margin-left: -235px;
+    background-image: url("../imgs/page_cai_collection3.png");
+}
+.level .answer_holder2 .word:nth-child(1) {
+    position: absolute;
+    left:0px;
+}
+.level .answer_holder2 .word:nth-child(2) {
+    position: absolute;
+    left:170px;
+}
+.level .answer_holder2 .word:nth-child(3) {
+    position: absolute;
+    right:0px;
+}
+.level .answer_holder3 {
+    width: 564px;
+    height: 129px;
+    margin-left: -282px;
+    background-image: url("../imgs/page_cai_collection4.png");
+}
+.level .answer_holder3 .word:nth-child(1) {
+    position: absolute;
+    left:0px;
+}
+.level .answer_holder3 .word:nth-child(2) {
+    position: absolute;
+    left:145px;
+}
+.level .answer_holder3 .word:nth-child(3) {
+    position: absolute;
+    left:290px;
+}
+.level .answer_holder3 .word:nth-child(4) {
+    position: absolute;
+    right:0px;
+}
+.level .select_word {
+    width: 602px;
+    height: 16%;
+    background-image: url("../imgs/page_level1_list.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    margin-left: -301px;
+}
+.level .select_word .btn {
+    width: 66px;
+    height: 66px;
+    float: left;
+    margin-top: 18px;
+    opacity: 0;
+}
+.level .select_word .oneline {
+    margin-left: 81px;
+}
+.level .select_word .twoline {
+    margin-left: 61px;
+}
+.level .select_word .threeline {
+    margin-left: 60px;
+}
+.level .select_word .lastline {
+    margin-left: 62px;
+}
+.result {
+    width: 640px;
+    height: 100%;
+    position: relative;
+}
+._great {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../imgs/page_result_great_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+}
+._ok {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../imgs/page_result_ok_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+}
+._ok .score_line,._bad .score_line {
+    width: 640px;
+    height: 5%;
+    position: absolute;
+    left: 0;
+    top: 12%;
+    font-size: 50px;
+    color: rgb(227, 125, 22);
+    text-align: center;
+}
+._bad {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../imgs/page_result_bad_bg.jpg") left top no-repeat;
+    background-size: 100% 100%;
+}
+._great .left_eye,._great .right_eye {
+    width: 36px;
+    height: 36px;
+    background-size: 100% 100%;
+    position: absolute;
+    top:31%;
+    -webkit-animation: eyes 1s linear 0s infinite;
+    -moz-animation: eyes 1s linear 0s infinite;
+    -ms-animation: eyes 1s linear 0s infinite;
+    -o-animation: eyes 1s linear 0s infinite;
+    animation: eyes 1s linear 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+._great .left_eye {
+    background: url("../imgs/page_great_eye.png") left top no-repeat;
+    left:280px;
+}
+._great .right_eye {
+    background: url("../imgs/page_great_eye.png") left top no-repeat;
+    left:360px;
+}
+@-webkit-keyframes eyes {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+._ok .heng {
+    width: 96px;
+    height: 84px;
+    background: url("../imgs/page_result_ok_heng.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:25%;
+    left:50%;
+    -webkit-animation: heng 2s ease 0s infinite;
+    -moz-animation: heng 2s ease 0s infinite;
+    -ms-animation: heng 2s ease 0s infinite;
+    -o-animation: heng 2s ease 0s infinite;
+    animation: heng 2s ease 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes heng {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0) scale(0);
+        transform: translateX(0) scale(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-120px) scale(1);
+        transform: translateX(-120px) scale(1);
+    }
+}
+._ok .arrow,._bad .arrow {
+    width: 75px;
+    height: 71px;
+    background: url("../imgs/page_result_ok_arrow.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left:528px;
+    top: 26px;
+    -webkit-animation: arrow 2s ease 0s infinite;
+    -moz-animation: arrow 2s ease 0s infinite;
+    -ms-animation: arrow 2s ease 0s infinite;
+    -o-animation: arrow 2s ease 0s infinite;
+    animation: arrow 2s ease 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes arrow {
+    0% {
+        -webkit-transform:scale(1);
+        transform:scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+._great .btn_prize,._great .btn_share {
+    width: 330px;
+    height: 8.5%;
+    position: absolute;
+    left:50%;
+    margin-left: -165px;
+}
+._ok .btn_prize,._ok .btn_restart {
+    width: 330px;
+    height: 8.5%;
+    position: absolute;
+    left:50%;
+    margin-left: -165px;
+}
+._bad .btn_prize,._bad .btn_restart {
+    width: 330px;
+    height: 8.5%;
+    position: absolute;
+    left:50%;
+    margin-left: -165px;
+}
+._great .btn_prize,._ok .btn_prize,._bad .btn_prize {
+    top:71%;
+}
+._great .btn_share,._ok .btn_restart,._bad .btn_restart {
+    top:83%;
+}
+._great .guide {
+    width: 560px;
+    height: 30%;
+    background: url("../imgs/page_share_guide.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 80px;
+    z-index: 102;
+    display: none;
+}
+._bad .tears {
+    width: 105px;
+    height: 102px;
+    background: url("../imgs/page_result_bad_tears.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left:295px;
+    top: 33%;
+    -webkit-animation: tears 2s ease 0s infinite;
+    -moz-animation: tears 2s ease 0s infinite;
+    -ms-animation: tears 2s ease 0s infinite;
+    -o-animation: tears 2s ease 0s infinite;
+    animation: tears 2s ease 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes tears {
+    0% {
+        -webkit-transform:translateY(0px);
+        transform:translateY(0px);
+    }
+    50% {
+        -webkit-transform:translateY(15px);
+        transform:translateY(15px);
+    }
+    100% {
+        -webkit-transform:translateY(0px);
+        transform:translateY(0px);
+    }
+}
+._prize {
+    width: 640px;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+._prize .top {
+    width: 640px;
+    height: 50%;
+    background: url("../imgs/shang.jpg") top left no-repeat;
+    background-size: 100% 100%;
+}
+._prize .center {
+    width: 640px;
+    height: 38%;
+    background-color: #e35d4c;
+    position: absolute;
+    top: 50%;
+}
+._prize .center .titlebg {
+    width: 640px;
+    height: 16%;
+    padding-top: 10%;
+    margin-top: -12%;
+    background: url("../imgs/open.png") left top no-repeat;
+    background-size: 100% 100%;
+    z-index: 105;
+    position: absolute;
+    top: 0;
+}
+._prize .center .hlogo {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 0%;
+    left:50%;
+    margin-left: -40px;
+    z-index: 110;
+}
+._prize .center .hlogo img {
+    border-radius: 50%;
+}
+._prize .center .tips {
+    width: 100%;
+    color: rgb(247, 215, 212);
+    font-size: 35px;
+    text-align: center;
+    position: absolute;
+    top: 35%;
+}
+._prize .center .partnerBtn {
+    width: 550px;
+    height: 15%;
+    text-align: center;
+    line-height: 64px;
+    background-color: #ff8a01;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-left: -275px;
+}
+._prize .bottom {
+    width: 640px;
+    height: 12%;
+    position: absolute;
+    top: 88%;
+    background-color: rgb(226, 226, 226);
+}
+._prize .bottom .logo {
+    width: 240px;
+    height: 50px;
+    background: url("../imgs/logo.png") no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left:-120px;
+}
+._prize .bottom .kefu {
+    width: 100%;
+    color: #666;
+    position: absolute;
+    bottom: 20px;
+    font-size: 19px;
+    text-align: center;
+}
+._prize .bottom .kefu a {
+    color: #666;
+    text-decoration: underline;
+}
+.bg {
+    width: 640px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 101;
+}
+._success {
+    width: 640px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 101;
+}
+._success .light {
+    width: 612px;
+    height: 40%;
+    background: url("../imgs/light.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:20%;
+    left:14px;
+    -webkit-animation: opac 1s linear 0s infinite;
+    -moz-animation: opac 1s linear 0s infinite;
+    -ms-animation: opac 1s linear 0s infinite;
+    -o-animation: opac 1s linear 0s infinite;
+    animation: opac 1s linear 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+._success .con_bg {
+    width: 543px;
+    height: 45%;
+    background: url("../imgs/dialog_success.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:30%;
+    left:48.5px;
+}
+._success .con_bg .content,._fail .con_bg .content {
+    width: 400px;
+    height: 100%;
+    height: 59%;
+    text-align: center;
+    font-size: 33px;
+    line-height: 40px;
+    position: absolute;
+    top:20%;
+    left:50%;
+    margin-left: -200px;
+}
+._success .content p {
+    color: #ee8601;
+}
+._fail .rain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-image: url("../imgs/rain_one.png"), url("../imgs/rain_two.png");
+    background-size: 100% 100%;
+    -webkit-animation: rain 5s linear 0s infinite;
+    -moz-animation: rain 5s linear 0s infinite;
+    -ms-animation: rain 5s linear 0s infinite;
+    -o-animation: rain 5s linear 0s infinite;
+    animation: rain 5s linear 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    z-index: 103;
+}
+@-webkit-keyframes rain {
+      0% {
+          background-position: 0px 0px, 0px 0px, 0px 0px;
+      }
+      100% {
+          background-position: 640px 1288px, 640px 644px, 640px 644px;
+      }
+  }
+._fail .con_bg {
+    width: 487px;
+    height: 30%;
+    background: url("../imgs/dialog_fail.png") left top no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:32%;
+    left:50%;
+    margin-left: -243.5px;
+    z-index: 102;
+}
+._fail .con_bg .content {
+    top:27%;
+    height: 40%;
+}
+._fail .content p {
+    color: #ee8601;
+}
